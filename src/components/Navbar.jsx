@@ -1,0 +1,542 @@
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import {
+  Box,
+  AppBar,
+  IconButton,
+  Drawer,
+  Typography,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Divider,
+  Slide,
+} from "@mui/material";
+
+import MenuIcon from "@mui/icons-material/Menu";
+import { FaBagShopping } from "react-icons/fa6";
+import SearchIcon from "@mui/icons-material/Search";
+import CloseIcon from "@mui/icons-material/Close";
+import HomeIcon from "@mui/icons-material/Home";
+import StorefrontIcon from "@mui/icons-material/Storefront";
+import InfoIcon from "@mui/icons-material/Info";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
+
+import SearchUI from "./SearchUI";
+import CartUI from "./CartUI";
+import { FaShoppingBag } from "react-icons/fa";
+
+const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+
+  // Check if we're on the home page or shop page
+  const isTransparentPage =
+    location.pathname === "/" || location.pathname === "/shop";
+
+  const navLinks = [
+    {
+      label: "Home",
+      path: "/",
+      icon: <HomeIcon />,
+      description: "Discover TruVault",
+    },
+    {
+      label: "Shop",
+      path: "/shop",
+      icon: <StorefrontIcon />,
+      description: "Browse Collection",
+    },
+    {
+      label: "About",
+      path: "/about",
+      icon: <InfoIcon />,
+      description: "Our Story",
+    },
+    {
+      label: "Contact",
+      path: "/contact",
+      icon: <ContactMailIcon />,
+      description: "Get in Touch",
+    },
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    setMenuOpen(false);
+  };
+
+  // Determine background color based on page and scroll state
+  const getBackgroundColor = () => {
+    if (!isTransparentPage) {
+      return "primary.main"; // Always white on non-transparent pages
+    }
+    return isScrolled ? "primary.main" : "transparent"; // Transparent pages: transparent -> white on scroll
+  };
+
+  // Determine text/icon color
+  const getTextColor = () => {
+    if (!isTransparentPage) {
+      return "#222"; // Always dark on non-transparent pages
+    }
+    return isScrolled ? "#222" : "#fff"; // Transparent pages: white -> dark on scroll
+  };
+
+  // Determine logo
+  const getLogo = () => {
+    if (!isTransparentPage) {
+      return "/black_text_logo.png"; // Always black logo on non-transparent pages
+    }
+    return isScrolled ? "/black_text_logo.png" : "/white_text_logo.png"; // Transparent pages: white -> black on scroll
+  };
+
+  return (
+    <AppBar
+      position="fixed"
+      elevation={0}
+      sx={{
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-around",
+        backgroundColor: getBackgroundColor(),
+        transition: "background-color 0.3s ease",
+        py: {
+          xs: 1,
+          md: 2,
+        },
+      }}
+    >
+      {/* Menu Button */}
+      <IconButton
+        onClick={() => setMenuOpen(true)}
+        sx={{
+          mr: 2,
+          padding: 1.5,
+          "&:hover": {
+            transform: "scale(1.05)",
+          },
+          transition: "all 0.2s ease",
+        }}
+      >
+        <MenuIcon fontSize="large" sx={{ color: getTextColor() }} />
+      </IconButton>
+
+      {/* Centered Logo */}
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Box
+          flex={1}
+          component="img"
+          onClick={() => navigate("/")}
+          src={getLogo()}
+          alt="Logo"
+          sx={{
+            height: "auto",
+            width: {
+              xs: 200,
+              md: 300,
+              cursor: "pointer",
+            },
+          }}
+        />
+      </Box>
+
+      {/* Search and Cart Icons */}
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <IconButton
+          onClick={() => setSearchOpen(true)}
+          sx={{
+            padding: 1.5,
+            "&:hover": {
+              transform: "scale(1.05)",
+            },
+            transition: "all 0.2s ease",
+          }}
+        >
+          <SearchIcon fontSize="large" sx={{ color: getTextColor() }} />
+        </IconButton>
+        <IconButton
+          onClick={() => setCartOpen(true)}
+          sx={{
+            padding: 1.5,
+            "&:hover": {
+              transform: "scale(1.05)",
+            },
+            transition: "all 0.2s ease",
+          }}
+        >
+          <FaShoppingBag size={24} color={getTextColor()} />
+        </IconButton>
+      </Box>
+
+      {/* Enhanced Menu Drawer */}
+      <Drawer
+        anchor="left"
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        slotProps={{
+          paper: {
+            sx: {
+              width: { xs: "90vw", sm: 500 },
+              height: "100vh",
+              background:
+                "linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(248,249,250,0.95) 100%)",
+              backdropFilter: "blur(20px)",
+              borderRight: "1px solid rgba(0,0,0,0.08)",
+              boxShadow: "2px 0 30px rgba(0,0,0,0.1)",
+            },
+          },
+        }}
+      >
+        <Box sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+          {/* Header */}
+          <Box
+            sx={{
+              p: 3,
+              borderBottom: "1px solid rgba(0,0,0,0.06)",
+              background: "rgba(255,255,255,0.8)",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                mb: 2,
+              }}
+            >
+              <Box
+                component="img"
+                src="/black_text_logo.png"
+                alt="TruVault"
+                sx={{
+                  height: 30,
+                  width: "auto",
+                }}
+              />
+              <IconButton
+                onClick={() => setMenuOpen(false)}
+                sx={{
+                  p: 1,
+                  "&:hover": {
+                    backgroundColor: "rgba(0,0,0,0.05)",
+                    transform: "rotate(90deg)",
+                  },
+                  transition: "all 0.2s ease",
+                }}
+              >
+                <CloseIcon sx={{ color: "#333", fontSize: "1.6rem" }} />
+              </IconButton>
+            </Box>
+
+            <Typography
+              variant="body2"
+              sx={{
+                color: "grey.600",
+                fontSize: "0.875rem",
+                fontWeight: 300,
+              }}
+            >
+              Premium Travel Essentials
+            </Typography>
+          </Box>
+
+          {/* Navigation Links */}
+          <Box sx={{ flex: 1, py: 2 }}>
+            <List sx={{ px: 1 }}>
+              {navLinks.map((link, index) => (
+                <ListItem key={link.label} disablePadding sx={{ mb: 0.5 }}>
+                  <ListItemButton
+                    onClick={() => handleNavigation(link.path)}
+                    sx={{
+                      borderRadius: 2,
+                      mx: 1,
+                      py: 2,
+                      px: 2.5,
+                      transition: "all 0.2s ease",
+                      "&:hover": {
+                        backgroundColor: "rgba(0,0,0,0.04)",
+                        transform: "translateX(8px)",
+                      },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        mr: 2.5,
+                        color: "secondary.main",
+                        display: "flex",
+                        alignItems: "center",
+                        "& svg": { fontSize: "1.3rem" },
+                      }}
+                    >
+                      {link.icon}
+                    </Box>
+                    <Box sx={{ flex: 1 }}>
+                      <ListItemText
+                        primary={link.label}
+                        secondary={link.description}
+                        primaryTypographyProps={{
+                          fontSize: "1rem",
+                          fontWeight: 500,
+                          color: "#333",
+                        }}
+                        secondaryTypographyProps={{
+                          fontSize: "0.8rem",
+                          color: "grey.500",
+                          fontWeight: 300,
+                        }}
+                      />
+                    </Box>
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+
+          {/* Footer */}
+          <Box
+            sx={{
+              p: 3,
+              borderTop: "1px solid rgba(0,0,0,0.06)",
+              background: "rgba(255,255,255,0.6)",
+            }}
+          >
+            <Typography
+              variant="caption"
+              sx={{
+                color: "grey.500",
+                fontSize: "0.75rem",
+                fontWeight: 300,
+                textAlign: "center",
+                display: "block",
+                mb: 1,
+              }}
+            >
+              TruVault © 2025
+            </Typography>
+            <Typography
+              variant="caption"
+              sx={{
+                color: "grey.400",
+                fontSize: "0.7rem",
+                fontWeight: 300,
+                textAlign: "center",
+                display: "block",
+              }}
+            >
+              Crafted for Discerning Travelers
+            </Typography>
+          </Box>
+        </Box>
+      </Drawer>
+
+      {/* Search Drawer (Top, full height, search input at top) */}
+      <Drawer
+        anchor="top"
+        open={searchOpen}
+        onClose={() => setSearchOpen(false)}
+        slotProps={{
+          paper: {
+            sx: {
+              height: "100vh",
+              background: "rgba(255,255,255,0.96)",
+              backdropFilter: "blur(10px)",
+              boxShadow: 0,
+              display: "flex",
+              flexDirection: "column",
+              transition: "all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)",
+            },
+          },
+        }}
+        transitionDuration={400}
+      >
+        <Slide
+          in={searchOpen}
+          direction="down"
+          timeout={400}
+          mountOnEnter
+          unmountOnExit
+        >
+          <Box
+            sx={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              opacity: searchOpen ? 1 : 0,
+              transform: searchOpen ? "translateY(0)" : "translateY(-20px)",
+              transition: "all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)",
+            }}
+          >
+            {/* Fixed Header with Close Button and Search Input */}
+            <Box
+              sx={{
+                position: "sticky",
+                top: 0,
+                backgroundColor: "rgba(255,255,255,0.98)",
+                backdropFilter: "blur(10px)",
+                borderBottom: "1px solid rgba(0,0,0,0.1)",
+                p: { xs: 2, md: 4 },
+                zIndex: 10,
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  mb: 3,
+                }}
+              >
+                <Box /> {/* Spacer for centering */}
+                <IconButton
+                  onClick={() => setSearchOpen(false)}
+                  sx={{
+                    padding: 1.5,
+                    "&:hover": {
+                      backgroundColor: "rgba(0,0,0,0.05)",
+                      transform: "rotate(90deg)",
+                    },
+                    transition: "all 0.2s ease",
+                  }}
+                >
+                  <CloseIcon sx={{ color: "#222", fontSize: "1.5rem" }} />
+                </IconButton>
+              </Box>
+
+              {/* Search Input Container */}
+              <Box
+                sx={{
+                  maxWidth: 700,
+                  mx: "auto",
+                }}
+              >
+                <SearchUI autoFocus={searchOpen} />
+              </Box>
+            </Box>
+
+            {/* Scrollable Content Area */}
+            <Box
+              sx={{
+                flex: 1,
+                overflow: "auto",
+                px: { xs: 2, md: 4 },
+              }}
+            >
+              {/* Additional content can go here if needed */}
+            </Box>
+          </Box>
+        </Slide>
+      </Drawer>
+
+      {/* Cart Drawer (Right side, Rimowa-inspired) */}
+      <Drawer
+        anchor="right"
+        open={cartOpen}
+        onClose={() => setCartOpen(false)}
+        slotProps={{
+          paper: {
+            sx: {
+              width: {
+                xs: "100vw",
+                sm: 450,
+              },
+              height: "100vh",
+              background: "rgba(255,255,255,0.98)",
+              backdropFilter: "blur(10px)",
+              boxShadow: "-2px 0 20px rgba(0,0,0,0.1)",
+              display: "flex",
+              flexDirection: "column",
+              transition: "all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)",
+            },
+          },
+        }}
+        transitionDuration={400}
+      >
+        <Slide
+          in={cartOpen}
+          direction="left"
+          timeout={400}
+          mountOnEnter
+          unmountOnExit
+        >
+          <Box
+            sx={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              opacity: cartOpen ? 1 : 0,
+              transform: cartOpen ? "translateX(0)" : "translateX(20px)",
+              transition: "all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)",
+            }}
+          >
+            {/* Fixed Header with Close Button */}
+            <Box
+              sx={{
+                position: "sticky",
+                top: 0,
+                backgroundColor: "rgba(255,255,255,0.98)",
+                backdropFilter: "blur(10px)",
+                borderBottom: "1px solid rgba(0,0,0,0.1)",
+                p: { xs: 2, md: 3 },
+                zIndex: 10,
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Box /> {/* Spacer for centering */}
+                <IconButton
+                  onClick={() => setCartOpen(false)}
+                  sx={{
+                    padding: 1.5,
+                    "&:hover": {
+                      backgroundColor: "rgba(0,0,0,0.05)",
+                      transform: "rotate(90deg)",
+                    },
+                    transition: "all 0.2s ease",
+                  }}
+                >
+                  <CloseIcon sx={{ color: "#222", fontSize: "1.5rem" }} />
+                </IconButton>
+              </Box>
+            </Box>
+
+            {/* Cart Content */}
+            <Box
+              sx={{
+                flex: 1,
+                overflow: "hidden",
+                px: { xs: 2, md: 3 },
+                pb: { xs: 2, md: 3 },
+              }}
+            >
+              <CartUI />
+            </Box>
+          </Box>
+        </Slide>
+      </Drawer>
+    </AppBar>
+  );
+};
+
+export default Navbar;

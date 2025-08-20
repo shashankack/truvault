@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "GPS Tracking",
+    "description": "Every TruVault comes with built-in GPS so you can track your bag in real time, right from your phone.",
+    "icon": "/features_icons/icon_1.png"
+  },
+  {
+    "id": 2,
+    "title": "5-Year Guarantee",
+    "description": "We've got your back. All TruVault suitcases are protected against functional damage for five years.",
+    "icon": "/features_icons/icon_2.png"
+  },
+  {
+    "id": 3,
+    "title": "Global Repair Support",
+    "description": "Access a growing network of trusted repair centers across the globe for quick and reliable service.",
+    "icon": "/features_icons/icon_3.png"
+  },
+  {
+    "id": 4,
+    "title": "30-Day Free Returns",
+    "description": "Changed your mind? Return unused luggage within 30 days with a prepaid return label.",
+    "icon": "/features_icons/icon_4.png"
+  }
+]

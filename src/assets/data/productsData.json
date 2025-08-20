@@ -1,0 +1,270 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "TruVault Hybrid Check-In L",
+      "shortDescription": "Premium hybrid suitcase combining durability with lightweight design for extended travel.",
+      "description": "Crafted with innovative hybrid materials and precision engineering, the TruVault Hybrid Check-In L represents the perfect balance of strength and weight. This premium suitcase features advanced polycarbonate construction with reinforced corners, making it ideal for frequent travellers who demand both style and functionality. Available in sophisticated colorways, TruVault is your reliable travel partner for journeys that matter.",
+      "extendedDescription": "Ideal for 7 to 10 days of travel, the TruVault Hybrid Check-In L offers several ingenious features that set it apart from ordinary luggage. The spacious interior accommodates all your essentials while maintaining organized packing solutions. Designed with care and built to last in our TruVault facilities, this suitcase comes with a complimentary leather luggage tag and premium sticker set.",
+      "price": 89999,
+      "originalPrice": 99999,
+      "currency": "INR",
+      "size": "Large (77cm)",
+      "weight": "4.2kg",
+      "capacity": "89L",
+      "material": "Hybrid Polycarbonate",
+      "colors": ["Black", "White", "Blue"],
+      "image": "/products/prod_1.png",
+      "gallery": ["/products/prod_1.png"],
+      "keyFeatures": [
+        {
+          "title": "Multi-Secure® System",
+          "description": "Advanced locking mechanism with TSA-approved combination locks for enhanced security during travel.",
+          "icon": "https://placehold.co/60x60/2C3E50/FFFFFF/png?text=🔒"
+        },
+        {
+          "title": "Smooth Telescopic Handle",
+          "description": "Stage-free telescopic handle system with ergonomic grip for effortless maneuvering through airports.",
+          "icon": "https://placehold.co/60x60/2C3E50/FFFFFF/png?text=🎯"
+        },
+        {
+          "title": "Flex Divider System",
+          "description": "Intelligent packing organization with flexible dividers that adapt to your packing needs.",
+          "icon": "https://placehold.co/60x60/2C3E50/FFFFFF/png?text=📦"
+        }
+      ],
+      "category": "Check-In Luggage",
+      "inStock": true,
+      "rating": 4.8,
+      "reviews": 156
+    },
+    {
+      "id": 2,
+      "name": "TruVault Essential Lite Cabin Kids",
+      "shortDescription": "Lightweight cabin suitcase designed specifically for young travelers with playful aesthetics.",
+      "description": "Introducing the TruVault Essential Lite Cabin Kids Edition – where functionality meets fun. Crafted with the same attention to detail as our adult collection, this cabin suitcase features vibrant colors and child-friendly design elements while maintaining the premium quality TruVault is known for. The lightweight construction makes it easy for children to handle independently.",
+      "extendedDescription": "Perfect for 2 to 3 days of travel, this kids' edition features specially designed compartments for toys, clothes, and essentials. The smooth-rolling wheels and telescopic handle are scaled appropriately for younger users. Each suitcase includes fun TruVault stickers and a personalized name tag to make travel exciting for your little adventurer.",
+      "price": 34999,
+      "originalPrice": 39999,
+      "currency": "INR",
+      "size": "Cabin (55cm)",
+      "weight": "2.1kg",
+      "capacity": "32L",
+      "material": "Impact-Resistant Polycarbonate",
+      "colors": ["Yellow", "Blue", "Pink", "Green"],
+      "image": "/products/prod_2.png",
+      "gallery": ["/products/prod_2.png"],
+      "keyFeatures": [
+        {
+          "title": "Child-Safe Design",
+          "description": "Rounded edges and smooth surfaces ensure safe handling for young travelers aged 5-12 years.",
+          "icon": "https://placehold.co/60x60/FF6B6B/FFFFFF/png?text=👶"
+        },
+        {
+          "title": "Fun Compartments",
+          "description": "Special pockets designed for toys, snacks, and travel games to keep kids entertained.",
+          "icon": "https://placehold.co/60x60/FF6B6B/FFFFFF/png?text=🎮"
+        },
+        {
+          "title": "Easy-Roll Wheels",
+          "description": "Smooth 360-degree spinner wheels sized perfectly for children to maneuver effortlessly.",
+          "icon": "https://placehold.co/60x60/FF6B6B/FFFFFF/png?text=⚡"
+        }
+      ],
+      "category": "Kids Luggage",
+      "inStock": true,
+      "rating": 4.9,
+      "reviews": 89
+    },
+    {
+      "id": 3,
+      "name": "TruVault Original Cabin Classic",
+      "shortDescription": "Timeless cabin suitcase in premium aluminum with refined handles and modern engineering.",
+      "description": "Crafted in high-grade aluminum with refined handles, the TruVault Original Cabin Classic blends modern design with precision engineering – a timeless companion for discerning travelers. This iconic piece represents the pinnacle of luggage craftsmanship, featuring our signature grooved exterior that's both functional and aesthetically striking.",
+      "extendedDescription": "Ideal for 3 to 4 days of travel, the TruVault Original Cabin Classic offers several ingenious features including smooth, stage-free telescopic handle, TruVault Multi-Secure® System, and TSA-approved locks. The Flex Divider system ensures organized packing while maintaining the elegant interior finish. Includes a complimentary leather luggage tag and premium sticker set.",
+      "price": 124999,
+      "originalPrice": 139999,
+      "currency": "INR",
+      "size": "Cabin (55cm)",
+      "weight": "4.9kg",
+      "capacity": "36L",
+      "material": "Premium Aluminum",
+      "colors": ["Silver", "Black", "Bronze"],
+      "image": "/products/prod_3.png",
+      "gallery": ["/products/prod_3.png"],
+      "keyFeatures": [
+        {
+          "title": "Premium Aluminum Build",
+          "description": "Aerospace-grade aluminum construction ensures maximum durability while maintaining lightweight performance.",
+          "icon": "https://placehold.co/60x60/C0392B/FFFFFF/png?text=💎"
+        },
+        {
+          "title": "Signature Grooved Design",
+          "description": "Iconic horizontal grooves provide structural strength and unmistakable TruVault aesthetic appeal.",
+          "icon": "https://placehold.co/60x60/C0392B/FFFFFF/png?text=✨"
+        },
+        {
+          "title": "Refined Handles",
+          "description": "Ergonomically designed handles with premium leather wrapping for comfortable grip and luxury feel.",
+          "icon": "https://placehold.co/60x60/C0392B/FFFFFF/png?text=👋"
+        }
+      ],
+      "category": "Premium Cabin",
+      "inStock": true,
+      "rating": 4.9,
+      "reviews": 234
+    },
+    {
+      "id": 4,
+      "name": "TruVault District Cabin Urban",
+      "shortDescription": "Contemporary urban-inspired cabin suitcase perfect for modern city travelers.",
+      "description": "The TruVault District Cabin Urban represents the evolution of travel gear for the modern urbanite. Featuring a sleek, minimalist design with contemporary aesthetics, this cabin suitcase is engineered for the fast-paced lifestyle of city dwellers who value both form and function in their travel accessories.",
+      "extendedDescription": "Designed for 2 to 4 days of urban travel, the District Cabin features innovative packing solutions tailored for business travelers and weekend adventurers. The streamlined exterior conceals a thoughtfully organized interior with dedicated laptop compartments and business essentials sections. Built with sustainable materials and modern manufacturing techniques.",
+      "price": 67999,
+      "originalPrice": 74999,
+      "currency": "INR",
+      "size": "Cabin (55cm)",
+      "weight": "3.2kg",
+      "capacity": "38L",
+      "material": "Recycled Polycarbonate",
+      "colors": ["Black", "Grey", "Grey"],
+      "image": "/products/prod_4.png",
+      "gallery": ["/products/prod_4.png"],
+      "keyFeatures": [
+        {
+          "title": "Urban Design Language",
+          "description": "Clean, minimalist aesthetics inspired by modern architecture and urban landscapes for contemporary appeal.",
+          "icon": "https://placehold.co/60x60/34495E/FFFFFF/png?text=🏙️"
+        },
+        {
+          "title": "Tech-Friendly Interior",
+          "description": "Dedicated compartments for laptops, tablets, and electronic accessories with protective padding.",
+          "icon": "https://placehold.co/60x60/34495E/FFFFFF/png?text=💻"
+        },
+        {
+          "title": "Sustainable Materials",
+          "description": "Constructed using recycled polycarbonate materials without compromising on durability or style.",
+          "icon": "https://placehold.co/60x60/34495E/FFFFFF/png?text=♻️"
+        }
+      ],
+      "category": "Urban Travel",
+      "inStock": true,
+      "rating": 4.7,
+      "reviews": 112
+    },
+    {
+      "id": 5,
+      "name": "TruVault Essential Check-In L",
+      "shortDescription": "Large capacity check-in suitcase offering exceptional value without compromising quality.",
+      "description": "The TruVault Essential Check-In L delivers premium travel functionality at an accessible price point. This large-capacity suitcase incorporates essential TruVault features and build quality, making it perfect for travelers who demand reliability without the premium price tag. Ideal for extended trips and family vacations.",
+      "extendedDescription": "Perfect for 7 to 14 days of travel, this spacious suitcase offers generous packing capacity with intelligent organization systems. The Essential series maintains TruVault's commitment to quality while focusing on core functionality. Features include smooth-rolling wheels, telescopic handle system, and comprehensive interior organization with multiple compartments.",
+      "price": 54999,
+      "originalPrice": 64999,
+      "currency": "INR",
+      "size": "Large (75cm)",
+      "weight": "4.8kg",
+      "capacity": "95L",
+      "material": "High-Impact ABS",
+      "colors": ["Black", "Navy", "Grey"],
+      "image": "/products/prod_5.png",
+      "gallery": ["/products/prod_5.png"],
+      "keyFeatures": [
+        {
+          "title": "Generous Capacity",
+          "description": "Spacious 95L interior with expandable sections to accommodate extended travel needs efficiently.",
+          "icon": "https://placehold.co/60x60/8E44AD/FFFFFF/png?text=📏"
+        },
+        {
+          "title": "Value Engineering",
+          "description": "Premium features and TruVault quality at an accessible price point for budget-conscious travelers.",
+          "icon": "https://placehold.co/60x60/8E44AD/FFFFFF/png?text=💰"
+        },
+        {
+          "title": "Family-Friendly Design",
+          "description": "Large compartments and easy organization systems perfect for family trips and group travel.",
+          "icon": "https://placehold.co/60x60/8E44AD/FFFFFF/png?text=👨‍👩‍👧‍👦"
+        }
+      ],
+      "category": "Check-In Luggage",
+      "inStock": true,
+      "rating": 4.6,
+      "reviews": 178
+    },
+    {
+      "id": 6,
+      "name": "TruVault Personal Aluminum Cross-Body",
+      "shortDescription": "Compact aluminum cross-body bag combining style and functionality for personal items.",
+      "description": "The TruVault Personal Aluminum Cross-Body bag represents the perfect fusion of luxury materials and practical design. Crafted from the same premium aluminum as our iconic suitcases, this compact bag offers secure storage for your most essential items while maintaining the unmistakable TruVault aesthetic.",
+      "extendedDescription": "Designed for the discerning traveler who values both security and style, this cross-body bag features multiple compartments for phones, passports, cards, and cash. The adjustable strap system ensures comfortable wear throughout long travel days. The aluminum construction provides exceptional protection for valuables while making a sophisticated style statement.",
+      "price": 29999,
+      "originalPrice": 34999,
+      "currency": "INR",
+      "size": "Compact (25cm x 18cm)",
+      "weight": "0.8kg",
+      "capacity": "3L",
+      "material": "Premium Aluminum",
+      "colors": ["Silver", "Black", "Gold"],
+      "image": "/products/prod_6.png",
+      "gallery": ["/products/prod_6.png"],
+      "keyFeatures": [
+        {
+          "title": "Aluminum Protection",
+          "description": "Hard-shell aluminum construction provides superior protection for valuables, cards, and electronics.",
+          "icon": "https://placehold.co/60x60/E67E22/FFFFFF/png?text=🛡️"
+        },
+        {
+          "title": "Smart Organization",
+          "description": "Multiple internal compartments with RFID-blocking technology to protect sensitive card information.",
+          "icon": "https://placehold.co/60x60/E67E22/FFFFFF/png?text=🗂️"
+        },
+        {
+          "title": "Versatile Carrying",
+          "description": "Adjustable cross-body strap converts to waist pack or can be carried as a clutch for versatility.",
+          "icon": "https://placehold.co/60x60/E67E22/FFFFFF/png?text=👜"
+        }
+      ],
+      "category": "Personal Bags",
+      "inStock": true,
+      "rating": 4.8,
+      "reviews": 67
+    },
+    {
+      "id": 7,
+      "name": "TruVault Original Trunk Plus",
+      "shortDescription": "Extra-large premium trunk for extended travel with vintage-inspired design elements.",
+      "description": "The TruVault Original Trunk Plus pays homage to the golden age of travel while incorporating modern engineering excellence. This extra-large trunk features vintage-inspired design elements combined with contemporary functionality, making it perfect for extended journeys, relocations, or as a distinctive statement piece.",
+      "extendedDescription": "Ideal for 14+ days of travel or permanent moves, the Original Trunk Plus offers unparalleled storage capacity with premium organizational systems. The reinforced construction and premium hardware ensure this trunk will serve you for decades. Features include brass-finished corner guards, leather straps, and a luxurious fabric-lined interior with multiple compartments.",
+      "price": 189999,
+      "originalPrice": 219999,
+      "currency": "INR",
+      "size": "Extra Large (85cm)",
+      "weight": "7.2kg",
+      "capacity": "125L",
+      "material": "Premium Aluminum with Leather Accents",
+      "colors": ["Brown", "Black", "Silver"],
+      "image": "/products/prod_7.png",
+      "gallery": ["/products/prod_7.png"],
+      "keyFeatures": [
+        {
+          "title": "Vintage Aesthetics",
+          "description": "Classic trunk design with brass hardware and leather straps for timeless appeal and luxury feel.",
+          "icon": "https://placehold.co/60x60/A0522D/FFFFFF/png?text=🎩"
+        },
+        {
+          "title": "Maximum Capacity",
+          "description": "Extra-large 125L storage capacity with multiple compartments for extended travel or relocation needs.",
+          "icon": "https://placehold.co/60x60/A0522D/FFFFFF/png?text=📦"
+        },
+        {
+          "title": "Lifetime Construction",
+          "description": "Built with premium materials and traditional craftsmanship techniques to last generations.",
+          "icon": "https://placehold.co/60x60/A0522D/FFFFFF/png?text=⏳"
+        }
+      ],
+      "category": "Premium Trunks",
+      "inStock": true,
+      "rating": 5.0,
+      "reviews": 23
+    }
+  ]
+}

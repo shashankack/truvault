@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("/fonts/ClashDisplay-Regular.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Clash Display";
+  src: url("/fonts/ClashDisplay-Medium.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Clash Display";
+  src: url("/fonts/ClashDisplay-Semibold.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "City Boys";
+  src: url("/fonts/CityBoys-Regular.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "City Boys";
+  src: url("/fonts/CityBoys-SemiBold.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "City Boys";
+  src: url("/fonts/CityBoys-Bold.otf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "City Boys";
+  src: url("/fonts/CityBoys-ExtraBold.otf");
+  font-weight: 900;
+}

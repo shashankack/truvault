@@ -1,0 +1,73 @@
+{
+  "faqs": [
+    {
+      "category": "Warranty",
+      "questions": [
+        {
+          "question": "What does the TruVault warranty cover?",
+          "answer": "TruVault offers a lifetime warranty on the functional aspects of all suitcases purchased from January 1, 2025. This covers material defects and workmanship, but excludes cosmetic damage, misuse, or normal wear and tear."
+        },
+        {
+          "question": "What is the warranty for items purchased before January 1, 2025?",
+          "answer": "Products purchased before January 1, 2025 are covered by a 5-year warranty from the date of purchase, provided the product is registered online within 30 days. Without registration, a standard 2-year warranty applies."
+        },
+        {
+          "question": "How do I claim a TruVault warranty?",
+          "answer": "To make a claim, contact TruVault Customer Support with proof of purchase and product registration details. If approved, we will repair or replace the product and cover return shipping costs."
+        }
+      ]
+    },
+    {
+      "category": "Orders & Shipping",
+      "questions": [
+        {
+          "question": "How can I track my order?",
+          "answer": "Once your order has shipped, you’ll receive an email with a tracking number and link. You can also track it through the 'My Orders' section on our website."
+        },
+        {
+          "question": "Can I modify or cancel my order?",
+          "answer": "Orders can be modified or cancelled within 24 hours of placement. Please contact TruVault Customer Support promptly for assistance."
+        }
+      ]
+    },
+    {
+      "category": "Returns & Exchanges",
+      "questions": [
+        {
+          "question": "What is TruVault’s return policy?",
+          "answer": "You may return your product within 30 days of delivery for a full refund using the prepaid return label provided in your account, as long as the item is unused, in original packaging, and in resalable condition."
+        },
+        {
+          "question": "Can I exchange an item?",
+          "answer": "If you wish to exchange for a different color of the same model, contact us within 30 days. For different models or sizes, please process a return and place a new order."
+        }
+      ]
+    },
+    {
+      "category": "Care & Maintenance",
+      "questions": [
+        {
+          "question": "How do I care for my TruVault suitcase?",
+          "answer": "Clean the exterior with a soft cloth and mild soap. Avoid harsh chemicals. For aluminum models, you may use a non-abrasive polish sparingly. Always dry thoroughly before storage."
+        },
+        {
+          "question": "How do I set the combination lock?",
+          "answer": "Our suitcases come with a factory-set code of 000. To change it: open the lock, press and hold the reset button, set your new three-digit code, and release the button. Always secure the dials afterward."
+        }
+      ]
+    },
+    {
+      "category": "Customization & Accessories",
+      "questions": [
+        {
+          "question": "Can I customize my TruVault suitcase?",
+          "answer": "Yes! Through our 'MyVault Customize' platform, you can choose case color, corner reinforcements, handles, and straps to make your luggage uniquely yours."
+        },
+        {
+          "question": "Are accessories available separately?",
+          "answer": "Yes—replacement handles, wheels, packing dividers, and straps are available for purchase on our Accessories page."
+        }
+      ]
+    }
+  ]
+}
