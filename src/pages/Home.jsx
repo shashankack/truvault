@@ -5,7 +5,6 @@ import HeroSection from "../components/sections/HeroSection";
 import ProductsSection from "../components/sections/ProductsSection";
 import CollectionsSection from "../components/sections/CollectionsSection";
 import productsData from "../assets/data/productsData.json";
-import FAQSection from "../components/sections/FAQSection";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -38,7 +37,6 @@ const Home = () => {
         showBottomBanner={true}
       />
       <CollectionsSection />
-      <FAQSection />
     </Box>
   );
 };

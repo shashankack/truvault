@@ -15,13 +15,13 @@ import {
 } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
-import { FaBagShopping } from "react-icons/fa6";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import HomeIcon from "@mui/icons-material/Home";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import InfoIcon from "@mui/icons-material/Info";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline"; // <-- NEW
 
 import SearchUI from "./SearchUI";
 import CartUI from "./CartUI";
@@ -57,6 +57,12 @@ const Navbar = () => {
       path: "/about",
       icon: <InfoIcon />,
       description: "Our Story",
+    },
+    {
+      label: "FAQ", // <-- NEW
+      path: "/faq",
+      icon: <HelpOutlineIcon />,
+      description: "Questions & Answers",
     },
     {
       label: "Contact",
@@ -132,6 +138,7 @@ const Navbar = () => {
           },
           transition: "all 0.2s ease",
         }}
+        aria-label="Open menu"
       >
         <MenuIcon fontSize="large" sx={{ color: getTextColor() }} />
       </IconButton>
@@ -146,11 +153,8 @@ const Navbar = () => {
           alt="Logo"
           sx={{
             height: "auto",
-            width: {
-              xs: 200,
-              md: 300,
-              cursor: "pointer",
-            },
+            width: { xs: 200, md: 300 },
+            cursor: "pointer", // <-- fixed from inside width
           }}
         />
       </Box>
@@ -166,6 +170,7 @@ const Navbar = () => {
             },
             transition: "all 0.2s ease",
           }}
+          aria-label="Open search"
         >
           <SearchIcon fontSize="large" sx={{ color: getTextColor() }} />
         </IconButton>
@@ -178,6 +183,7 @@ const Navbar = () => {
             },
             transition: "all 0.2s ease",
           }}
+          aria-label="Open cart"
         >
           <FaShoppingBag size={24} color={getTextColor()} />
         </IconButton>
@@ -238,6 +244,7 @@ const Navbar = () => {
                   },
                   transition: "all 0.2s ease",
                 }}
+                aria-label="Close menu"
               >
                 <CloseIcon sx={{ color: "#333", fontSize: "1.6rem" }} />
               </IconButton>
@@ -249,7 +256,7 @@ const Navbar = () => {
                 color: "grey.600",
                 fontSize: "0.875rem",
                 fontWeight: 300,
-              }}
+            }}
             >
               Premium Travel Essentials
             </Typography>
@@ -258,7 +265,7 @@ const Navbar = () => {
           {/* Navigation Links */}
           <Box sx={{ flex: 1, py: 2 }}>
             <List sx={{ px: 1 }}>
-              {navLinks.map((link, index) => (
+              {navLinks.map((link) => (
                 <ListItem key={link.label} disablePadding sx={{ mb: 0.5 }}>
                   <ListItemButton
                     onClick={() => handleNavigation(link.path)}
@@ -344,7 +351,7 @@ const Navbar = () => {
         </Box>
       </Drawer>
 
-      {/* Search Drawer (Top, full height, search input at top) */}
+      {/* Search Drawer */}
       <Drawer
         anchor="top"
         open={searchOpen}
@@ -382,7 +389,7 @@ const Navbar = () => {
               transition: "all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)",
             }}
           >
-            {/* Fixed Header with Close Button and Search Input */}
+            {/* Sticky Header */}
             <Box
               sx={{
                 position: "sticky",
@@ -402,7 +409,7 @@ const Navbar = () => {
                   mb: 3,
                 }}
               >
-                <Box /> {/* Spacer for centering */}
+                <Box />
                 <IconButton
                   onClick={() => setSearchOpen(false)}
                   sx={{
@@ -413,37 +420,23 @@ const Navbar = () => {
                     },
                     transition: "all 0.2s ease",
                   }}
+                  aria-label="Close search"
                 >
                   <CloseIcon sx={{ color: "#222", fontSize: "1.5rem" }} />
                 </IconButton>
               </Box>
 
-              {/* Search Input Container */}
-              <Box
-                sx={{
-                  maxWidth: 700,
-                  mx: "auto",
-                }}
-              >
+              <Box sx={{ maxWidth: 700, mx: "auto" }}>
                 <SearchUI autoFocus={searchOpen} />
               </Box>
             </Box>
 
-            {/* Scrollable Content Area */}
-            <Box
-              sx={{
-                flex: 1,
-                overflow: "auto",
-                px: { xs: 2, md: 4 },
-              }}
-            >
-              {/* Additional content can go here if needed */}
-            </Box>
+            <Box sx={{ flex: 1, overflow: "auto", px: { xs: 2, md: 4 } }} />
           </Box>
         </Slide>
       </Drawer>
 
-      {/* Cart Drawer (Right side, Rimowa-inspired) */}
+      {/* Cart Drawer */}
       <Drawer
         anchor="right"
         open={cartOpen}
@@ -485,7 +478,6 @@ const Navbar = () => {
               transition: "all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)",
             }}
           >
-            {/* Fixed Header with Close Button */}
             <Box
               sx={{
                 position: "sticky",
@@ -504,7 +496,7 @@ const Navbar = () => {
                   justifyContent: "space-between",
                 }}
               >
-                <Box /> {/* Spacer for centering */}
+                <Box />
                 <IconButton
                   onClick={() => setCartOpen(false)}
                   sx={{
@@ -515,13 +507,13 @@ const Navbar = () => {
                     },
                     transition: "all 0.2s ease",
                   }}
+                  aria-label="Close cart"
                 >
                   <CloseIcon sx={{ color: "#222", fontSize: "1.5rem" }} />
                 </IconButton>
               </Box>
             </Box>
 
-            {/* Cart Content */}
             <Box
               sx={{
                 flex: 1,

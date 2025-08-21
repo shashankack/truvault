@@ -10,14 +10,14 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTheme } from "@mui/material/styles";
-import faqData from "../../assets/data/faqData.json";
+import faqData from "../assets/data/faqData.json";
 
-const FAQSection = () => {
+const FAQ = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Box sx={{ color: "#000", minHeight: "100vh", py: 6 }}>
+    <Box sx={{ color: "#000", minHeight: "100vh", py: { xs: 12, sm: 20 } }}>
       <Container maxWidth="md">
         {/* Monogram */}
         <Box display="flex" justifyContent="center" mb={4}>
@@ -73,4 +73,4 @@ const FAQSection = () => {
   );
 };
 
-export default FAQSection;
+export default FAQ;
