@@ -10,12 +10,14 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  Divider,
   Slide,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
+import HamburgerIcon from "./icons/HamburgerIcon";
+import SearchIcon from "./icons/SearchIcon";
+import ShoppingBagIcon from "./icons/ShoppingBagIcon";
 import CloseIcon from "@mui/icons-material/Close";
 import HomeIcon from "@mui/icons-material/Home";
 import StorefrontIcon from "@mui/icons-material/Storefront";
@@ -25,11 +27,12 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline"; // <-- NEW
 
 import SearchUI from "./SearchUI";
 import CartUI from "./CartUI";
-import { FaShoppingBag } from "react-icons/fa";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -118,12 +121,16 @@ const Navbar = () => {
       sx={{
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: "space-around",
+        justifyContent: "space-between",
         backgroundColor: getBackgroundColor(),
         transition: "background-color 0.3s ease",
         py: {
           xs: 1,
           md: 2,
+        },
+        px: {
+          xs: 1,
+          md: 20,
         },
       }}
     >
@@ -131,40 +138,48 @@ const Navbar = () => {
       <IconButton
         onClick={() => setMenuOpen(true)}
         sx={{
-          mr: 2,
-          padding: 1.5,
+          mr: 4,
           "&:hover": {
             transform: "scale(1.05)",
           },
           transition: "all 0.2s ease",
         }}
+        size="small"
         aria-label="Open menu"
       >
-        <MenuIcon fontSize="large" sx={{ color: getTextColor() }} />
+        <HamburgerIcon
+          size={isMobile ? 22 : 28}
+          color={getTextColor()}
+          hoverColor={getTextColor()}
+        />
       </IconButton>
 
       {/* Centered Logo */}
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Box sx={{ display: "flex", justifyContent: "center" }} flex={1}>
         <Box
-          flex={1}
           component="img"
           onClick={() => navigate("/")}
           src={getLogo()}
           alt="Logo"
           sx={{
             height: "auto",
-            width: { xs: 200, md: 300 },
-            cursor: "pointer", // <-- fixed from inside width
+            width: { xs: 150, md: 300 },
+            cursor: "pointer",
           }}
         />
       </Box>
 
       {/* Search and Cart Icons */}
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+        }}
+      >
         <IconButton
           onClick={() => setSearchOpen(true)}
           sx={{
-            padding: 1.5,
             "&:hover": {
               transform: "scale(1.05)",
             },
@@ -172,7 +187,11 @@ const Navbar = () => {
           }}
           aria-label="Open search"
         >
-          <SearchIcon fontSize="large" sx={{ color: getTextColor() }} />
+          <SearchIcon
+            size={isMobile ? 22 : 28}
+            color={getTextColor()}
+            hoverColor={getTextColor()}
+          />
         </IconButton>
         <IconButton
           onClick={() => setCartOpen(true)}
@@ -185,7 +204,11 @@ const Navbar = () => {
           }}
           aria-label="Open cart"
         >
-          <FaShoppingBag size={24} color={getTextColor()} />
+          <ShoppingBagIcon
+            size={isMobile ? 22 : 28}
+            color={getTextColor()}
+            hoverColor={getTextColor()}
+          />
         </IconButton>
       </Box>
 
@@ -256,7 +279,7 @@ const Navbar = () => {
                 color: "grey.600",
                 fontSize: "0.875rem",
                 fontWeight: 300,
-            }}
+              }}
             >
               Premium Travel Essentials
             </Typography>
